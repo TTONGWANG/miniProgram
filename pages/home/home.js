@@ -1,66 +1,64 @@
 // pages/home/home.js
+
+const app = getApp();
+const gender = app.globalData.gender;
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    name: 'Tong',
+    age: 18,
+    gender: gender,
+    students: [
+      {
+        id: 100,
+        name: 'Tong',
+        age: 18
+      },
+      {
+        id: 100,
+        name: 'Pei',
+        age: 19
+      },
+      {
+        id: 100,
+        name: 'James',
+        age: 20
+      },
+    ],
+    counter: 0
+  },
+  add() {
+    // 错误做法
+    // this.data.counter++;
 
+    // this.setData()
+    this.setData({
+      counter: this.data.counter + 1
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  sub() {
+    this.setData({
+      counter: this.data.counter - 1
+    })
+  },
+  // 页面被加载
+  onLoad() {
+    console.log('onLoad')
+  },
+  //页面显示出来时
+  onShow() {
+    console.log('onShow')
+  },
+  //初次页面渲染完成
+  onReady() {
+    console.log('onReady')
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  // 页面隐藏起来时
+  onHide() {
+    console.log('onHide')
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onUnload() {
+    console.log('onUnload')
   }
 })

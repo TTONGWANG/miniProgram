@@ -1,3 +1,13 @@
 <!--pages/home/home.wxml-->
-<text class="title">Hello World</text>
-<button size="mini">按钮</button>
+
+<!-- 1. 数据绑定  Mustache-->
+<view>Hello {{name}}</view>
+<view>My age is {{age}}</view>
+<view>My gender is {{gender}}</view>
+<!-- 2. 列表展示：vw: for-->
+<view wx:for="{{students}}" wx:key="*this">{{item.name}}--{{item.age}}</view>
+
+<!-- 3. 事件监听改变counter-->
+<view>当前计数: {{counter}}</view>
+<button size="mini" bindtap="add">+</button>
+<button size="mini" bindtap="sub">-</button>
