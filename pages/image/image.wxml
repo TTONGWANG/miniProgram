@@ -1,0 +1,13 @@
+<!--pages/image/image.wxml-->
+<text>pages/image/image.wxml</text>
+
+<image src="../../assets/home/popular_bg.jpg"/>
+<image src="/assets/home/popular_bg.jpg"/>
+<button bindtap="handleChooseAlbum">选择图片</button>
+<image src="{{imagePath}}"/>
+<image wx:for="{{5}}"
+  src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"
+  bindload="handleImgLoad"
+  lazy-load="true"
+/>
+<image show-menu-by-longpress src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"/>

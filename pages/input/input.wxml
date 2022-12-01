@@ -1,0 +1,12 @@
+<!--pages/input/input.wxml-->
+<text>pages/input/input.wxml</text>
+<input />
+
+<input value="hahah" />
+
+<input type="number" />
+
+<input bindinput="handleInput"
+       bindfocus="handleFocus"
+       bindblur="handleBlur"
+/>
