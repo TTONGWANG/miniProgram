@@ -1,0 +1,58 @@
+<!--pages/scroll-view/scroll.wxml-->
+<!-- <text>pages/scroll-view/scroll.wxml</text> -->
+<!-- 水平滚动 -->
+<scroll-view class="container" scroll-x>
+  <view class="item1" wx:for="{{10}}">{{item}}</view>
+</scroll-view>
+
+<!-- 垂直滚动 -->
+<scroll-view class="container2" scroll-y bindscroll="handleScroll">
+  <view class="item2" wx:for="{{10}}">{{item}}</view>
+</scroll-view>
+
+<!-- 内联样式 -->
+<view style="color: red; font-size: 32px;">aa</view>
+
+<!-- 全局样式 -->
+<view class="wapper">bb</view>
+
+<!-- 优先级 行内 > 页内 > 全局 -->
+
+<view class="page__bd">
+		<view class="weui-search-bar {{inputShowed ? 'weui-search-bar_focusing' : ''}}" id="searchBar">
+			<form class="weui-search-bar__form"
+      aria-role="combobox"
+      aria-haspopup="true"
+      aria-expanded="{{inputVal.length > 0 ? 'true' : 'false'}}"
+      aria-owns="searchResult"
+      >
+        <view class="weui-search-bar__box">
+          <i class="weui-icon-search"></i>
+          <input aria-controls="searchResult" type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping"
+
+          />
+          <view aria-role="button" aria-label="清除" class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput"></view>
+        </view>
+        <label class="weui-search-bar__label" bindtap="showInput">
+          <i class="weui-icon-search"></i>
+          <span class="weui-search-bar__text">搜索</span>
+        </label>
+			</form>
+      <view aria-role="button" class="weui-search-bar__cancel-btn" bindtap="hideInput">取消</view>
+		</view>
+</view>
+
+<view>{{firstName}} {{lastName}}</view>
+<view>{{firstName + " " + lastName}}</view>
+<view>{{age >= 18 ? '成年人' : '未成年人'}}</view>
+<view>{{nowTime}}</view>
+<view wx:for="{{list}}" wx:key="item">{{item}} {{index}}</view>
+
+<import src='../wxml/template' />
+
+<template is="isTem" data="{{btnText:'check',content:'hahaha'}}"/>
+<template is="isTem" data="{{btnText:'ok',content:'xixixi'}}"/>
+
+
+<wxs src="./wxs/format.wxs" module="format"/>
+<view >{{format.priceFormat(price, 2)}}</view>

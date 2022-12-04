@@ -1,0 +1,12 @@
+<!--components/my-mul-slots/my-mul-slots.wxml-->
+<view>我是my-mul-slots开头</view>
+<view class="slot1">
+  <slot name="slot1"></slot>
+</view>
+<view class="slot2">
+  <slot name="slot2"></slot>
+</view>
+<view class="slot3">
+  <slot name="slot3"></slot>
+</view>
+<view>我是my-mul-slots结尾</view>
